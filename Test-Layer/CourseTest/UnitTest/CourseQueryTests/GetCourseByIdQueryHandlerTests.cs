@@ -1,5 +1,5 @@
 ﻿using Application_Layer.Queries.CourseQueries.GetCourseById;
-using Domain_Layer.Models.CourseModel;
+using Domain_Layer.Models.Course;
 using FakeItEasy;
 using Infrastructure_Layer.Repositories.Course;
 
@@ -67,4 +67,3 @@ namespace Test_Layer.CourseTest.UnitTests.CourseQueryTests
         }
     }
 }
-

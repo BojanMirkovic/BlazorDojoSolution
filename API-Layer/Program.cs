@@ -1,12 +1,13 @@
 ﻿using System.Text;
 using Application_Layer;
-using Domain_Layer.Models.UserModel;
+using Domain_Layer.Models.User;
 using Infrastructure_Layer;
 using Infrastructure_Layer.Database;
 using Infrastructure_Layer.DatabaseHelper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontEndDevServer",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5173")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -28,6 +40,7 @@ builder.Services.AddSwaggerGen(c =>
         BearerFormat = "JWT"
     });
 
+
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
 {
     {
@@ -39,8 +52,14 @@ builder.Services.AddSwaggerGen(c =>
                 Id = "Bearer"
             }
         },
-        Array.Empty<string>()
+            Array.Empty<string>()
     }
+    });
+
+    c.MapType<TimeSpan>(() => new OpenApiSchema
+    {
+        Type = "string",
+        Example = new OpenApiString("00:00:00")
     });
 
 });
@@ -75,13 +94,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
+app.UseCors("AllowFrontEndDevServer");
+
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dojo BE API V1");
 });
-
-app.MapIdentityApi<UserModel>();
 
 app.UseHttpsRedirection();
 

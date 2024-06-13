@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Infrastructure_Layer.Repositories.Course;
-using Infrastructure_Layer.Repositories.Module;
+﻿using Infrastructure_Layer.Repositories.Course;
 using MediatR;
 
 namespace Application_Layer.Commands.CourseCommands.DeleteCourse
@@ -12,12 +6,10 @@ namespace Application_Layer.Commands.CourseCommands.DeleteCourse
     public class DeleteCourseCommandHandler : IRequestHandler<DeleteCourseCommand, DeleteCourseResult>
     {
         private readonly ICourseRepository _courseRepository;
-        private readonly IModuleRepository _moduleRepository;
 
-        public DeleteCourseCommandHandler(ICourseRepository courseRepository, IModuleRepository moduleRepository)
+        public DeleteCourseCommandHandler(ICourseRepository courseRepository)
         {
             _courseRepository = courseRepository;
-            _moduleRepository = moduleRepository;
         }
 
         public async Task<DeleteCourseResult> Handle(DeleteCourseCommand request, CancellationToken cancellationToken)
@@ -28,7 +20,6 @@ namespace Application_Layer.Commands.CourseCommands.DeleteCourse
             }
             try
             {
-                //await _moduleRepository.DeleteModulesByCourseIdAsync(request.CourseId);
                 await _courseRepository.DeleteCourseByIdAsync(request.CourseId);
 
                 return new DeleteCourseResult { Success = true, Message = "Course and related modules successfully deleted" };

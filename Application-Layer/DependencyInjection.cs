@@ -18,6 +18,7 @@ namespace Application_Layer
 
             services.AddValidatorsFromAssembly(assembly);
 
+
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<MappingProfiles>();
