@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure_Layer.Migrations
 {
     [DbContext(typeof(DojoDBContext))]
-    [Migration("20240606193420_Init")]
-    partial class Init
+    [Migration("20240613114933_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -446,15 +446,15 @@ namespace Infrastructure_Layer.Migrations
                         {
                             Id = "08260479-52a0-4c0e-a588-274101a2c3be",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "17314244-61a2-4249-8b9f-129a4fcd5b75",
+                            ConcurrencyStamp = "e95a9fec-444f-49ce-83bd-78163f6b546f",
                             Email = "bojan@infinet.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "BOJAN@INFINET.COM",
                             NormalizedUserName = "BOJAN@INFINET.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIQSWoj/n1ZqMBxDPUE8JMGM/bdyg1YDqiBBfwkA6Na9FecVlrtte0N7NLquD3fCvQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC4pSrGlVLqPF7bK/PDtRZMb4YZhv9d1k86yYRzJ9m/Qmi2xmGirkD8vTPVRY27Pqg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8ceabd22-e489-427f-9bf6-ccfb9477f138",
+                            SecurityStamp = "d7ef5ac6-8a2f-4f7d-9cdc-880234c5776a",
                             TwoFactorEnabled = false,
                             UserName = "bojan@infinet.com",
                             FirstName = "Bojan",
