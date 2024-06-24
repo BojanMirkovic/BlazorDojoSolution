@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontEndDevServer",
         builder =>
         {
-            builder.WithOrigins("http://localhost:5173")
+            builder.WithOrigins("https://purple-cliff-099748d0f.5.azurestaticapps.net")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
