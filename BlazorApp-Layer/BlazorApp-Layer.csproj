@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
@@ -16,7 +15,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Application-Layer\Application-Layer.csproj" />
     <ProjectReference Include="..\Infrastructure-Layer\Infrastructure-Layer.csproj" />
-  </ItemGroup>
+  </ItemGroup>    <ProjectReference Include="..\Application-Layer\Application-Layer.csproj" />
+
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />

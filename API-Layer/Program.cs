@@ -7,6 +7,7 @@ using Infrastructure_Layer.DatabaseHelper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 
@@ -15,15 +16,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
-
+// service za povezivanje sa FE UI
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontEndDevServer",
         builder =>
         {
-            builder.WithOrigins("http://localhost:5173")
+            builder.WithOrigins("https://localhost:7197")// blazor https address
+                  .AllowAnyMethod()
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .WithHeaders(HeaderNames.ContentType);
         });
 });
 

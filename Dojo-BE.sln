@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Layer", "Test-Layer\Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{C7C70432-2017-4E11-BF29-5B111B0B3D84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{65FFDAB7-5664-4BBD-ABBF-F90CCF322B50}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,17 +41,12 @@ Global
 		{DC196A30-F8E1-410D-826A-21CD608D4581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC196A30-F8E1-410D-826A-21CD608D4581}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC196A30-F8E1-410D-826A-21CD608D4581}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65FFDAB7-5664-4BBD-ABBF-F90CCF322B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65FFDAB7-5664-4BBD-ABBF-F90CCF322B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65FFDAB7-5664-4BBD-ABBF-F90CCF322B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65FFDAB7-5664-4BBD-ABBF-F90CCF322B50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0EC4C48B-46BD-4183-9953-DA29D2F1BD46} = {C7C70432-2017-4E11-BF29-5B111B0B3D84}
-		{65FFDAB7-5664-4BBD-ABBF-F90CCF322B50} = {C7C70432-2017-4E11-BF29-5B111B0B3D84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1AD2B064-6E41-4D84-A990-528C3EAAE3C3}
